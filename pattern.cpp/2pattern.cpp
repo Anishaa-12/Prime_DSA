@@ -2,24 +2,38 @@
 using namespace std;
 
 int main() {
-    int n; 
-    cin>>n;
+    int m;
+    cin>>m;
+    int n=(m+1)/2;
     for(int i=1;i<=n;i++){
-     //spaces 
-     for (int j=1;j<=n-i; j++){
-        cout<<"  ";
-     }
-    //total pattern 
-    for (int j=1;j<=2*i-1;j++){
-       if (j%2==0){
-             //!
-          cout<<"!   ";
+        //outer space
+        for(int j=1;j<=n-i;j++){
+            cout<<"  ";
         }
-        else{ 
-            //star 
-            cout<<"*  ";
+        cout<<"* ";
+        //inner space
+        for(int j=1;j<=2*i-3;j++){
+            cout<<"  ";
         }
+        if(i!=1){
+            cout<<"* ";
+        }
+        cout<<endl;
     }
-  cout<<endl;
-}
-}
+    for(int i=n-1;i>=1;i--){
+        //outer space
+        for(int j=1;j<=n-i;j++){
+            cout<<"  ";
+        }
+        cout<<"* ";
+        //inner space
+        for(int j=1;j<=2*i-3;j++){
+            cout<<"  ";
+        }
+        if(i!=1){
+            cout<<"* ";
+        }
+        cout<<endl;
+    }
+    return 0;
+  }
